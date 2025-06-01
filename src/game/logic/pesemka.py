@@ -8,6 +8,7 @@ class Pesemka(BaseLogic):
         self.goal = None
         self.teleporter_pairs = {}
         self.post_tp_target = None
+        self.position = Position
 
     def objects_by_type(self, board, type_name):
         return [o for o in board.game_objects if o.type == type_name]
@@ -134,7 +135,7 @@ class Pesemka(BaseLogic):
 
         return best_obj.position
 
-    def next_move(self, board_bot, board):
+    def next_move(self, board_bot : GameObject, board : Board):
         self.goal = self.choose_optimal_target(board_bot, board)
         if position_equals(board_bot.position, self.goal):
             self.goal = board_bot.properties.base
