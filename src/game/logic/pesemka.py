@@ -4,7 +4,7 @@ from game.util import *
 
 
 class Pesemka(BaseLogic):
-    def __init__(self):
+    def __init__(self): 
         self.goal = None
         self.teleporter_pairs = {}
         self.post_tp_target = None
@@ -59,7 +59,7 @@ class Pesemka(BaseLogic):
 
     def choose_optimal_target(self, bot, board):
         current = bot.position
-        carried = bot.properties.diamonds
+        carried = bot.properties.diamonds   
         base = bot.properties.base
 
         # Jika diamond >= 5 maka bot akan pulang
